@@ -42,3 +42,6 @@ https://www.roboter-bausatz.de/p/5x-druckschalter-selbstsichernd-12mm-ds-428-wei
 
 1x Button 
 https://www.roboter-bausatz.de/p/drucktaster-button-schalter-gelb-12mm-250v-1a
+
+1x USB-C Breakout
+https://www.adafruit.com/product/5978
