@@ -1,5 +1,10 @@
 # Timer-Pi v2
 
+![Overview Hardware](1.jpeg)
+
+![Streamdeck integration](2.jpeg)
+
+
 raspbian Lite Image
 cat /etc/os-release
 ```
@@ -16,7 +21,7 @@ BUG_REPORT_URL="https://bugs.debian.org/"
 
 ## Allgemeine Anpassungen
 
-Static IP + DHCP
+### Static IP + DHCP
 
 /etc/network/interfaces.d/eth0.conf
 ```
@@ -30,13 +35,14 @@ iface eth0 inet static
        address 192.168.10.173/24
 ```
 
-Disable Bluetooth/Wifi 
+### Disable Bluetooth/Wifi 
 ```
 sudo systemctl disable wpa_supplicant.service
 sudo systemctl disable hciuart.service
 sudo systemctl disable bluealsa.service
 sudo systemctl disable bluetooth.service
 ```
+
 /boot/firmware/config.txt
 ```
 # Disable Bluetooth
