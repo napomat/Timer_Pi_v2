@@ -3,6 +3,7 @@
 ![Overview Hardware](1.jpeg)
 
 ![Streamdeck integration](2.jpeg)
+![Streamdeck integration](3.jpeg)
 
 
 raspbian Lite Image
@@ -94,3 +95,6 @@ mkdir -p /home/user/.chromium/profile1
 mkdir -p /home/user/.chromium/profile2
 ```
 
+### Steamdeck Integration
+Based on this script.<br>
+https://github.com/abcminiuser/python-elgato-streamdeck/tree/master
