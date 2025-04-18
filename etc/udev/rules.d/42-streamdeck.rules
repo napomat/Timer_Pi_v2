@@ -1,0 +1,1 @@
+ATTRS{idVendor}=="0fd9", ATTRS{idProduct}=="006d", TAG+="systemd", ENV{SYSTEMD_WANTS}="streamdeck.service"

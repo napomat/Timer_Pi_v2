@@ -1,0 +1,15 @@
+services:
+  ontime:
+    container_name: ontime
+    image: getontime/ontime:latest
+    ports:
+      - "4001:4001/tcp"
+      - "8888:8888/udp"
+      - "9999:9999/udp"
+      - "80:4001/tcp"
+    volumes:
+      - "./ontime-db:/external/db/"
+      - "./ontime-styles:/external/styles/"
+    environment:
+      - TZ=Europe/Berlin
+    restart: unless-stopped

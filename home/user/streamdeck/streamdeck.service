@@ -1,0 +1,7 @@
+[Unit]
+Description=Streamdeck Python Service
+
+
+[Service]
+ExecStart=/home/user/streamdeck/script.sh
+
