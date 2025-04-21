@@ -66,13 +66,15 @@ touch /home/user/.hushlogin
 
 ### raspi-config 
 - Autologin mit console
-  
-### Docker install
+
+## Software Install
+
+### Docker
 ```
 curl -fsSL https://get.docker.com -o get-docker.sh
 sh get-docker.sh
 ```
-### Install X
+### X11
 ```
 sudo apt-get install --no-install-recommends xserver-xorg-video-all \
 xserver-xorg-input-all xserver-xorg-core xinit x11-xserver-utils \
@@ -95,6 +97,30 @@ mkdir -p /home/user/.chromium/profile1
 mkdir -p /home/user/.chromium/profile2
 ```
 
-### Steamdeck Integration
+## Setup Streamdeck integration
+### "Install" Service
+```
+ln -s /home/user/streamdeck/streamdeck.service /etc/systemd/system/streamdeck.service
+
+```
+### Update the udev rules file as needed
+I tested this only with my own Streamdeck v1 (Model: 20GAA9902)
+```
+user@timer-pi:~$ lsusb
+Bus 004 Device 001: ID 1d6b:0003 Linux Foundation 3.0 root hub
+Bus 003 Device 003: ID 0fd9:006d Elgato Systems GmbH Stream Deck original V2
+Bus 003 Device 001: ID 1d6b:0002 Linux Foundation 2.0 root hub
+Bus 002 Device 001: ID 1d6b:0003 Linux Foundation 3.0 root hub
+Bus 001 Device 001: ID 1d6b:0002 Linux Foundation 2.0 root hub
+```
+Use the Vendor ID and Product ID within the udev rules.d "42-streamdeck.rules"
+![Vendor and Product ID](4.png)
+
+```
+ATTRS{idVendor}=="0fd9", ATTRS{idProduct}=="006d", TAG+="systemd", ENV{SYSTEMD_WANTS}="streamdeck.service"
+```
+
+
+### Streamdeck Integration
 Based on this script.<br>
 https://github.com/abcminiuser/python-elgato-streamdeck/tree/master
